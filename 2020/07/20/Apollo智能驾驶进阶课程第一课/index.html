@@ -206,6 +206,8 @@
             <article class="markdown-body">
               <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><em>本系列文章是百度Apollo智能驾驶系列公开课的学习记录。<a href="https://apollo.auto/" target="_blank" rel="noopener">Apollo</a>是百度发布的面向汽车行业及自动驾驶领域的软件平台。公开课的地址请点击<a href="https://apollo.auto/devcenter/coursetable_cn.html?target=2">这里</a></em>。</p>
 <p>本次课程讲述无人驾驶行业及Apollo平台的核心技术模块，帮助学习者熟悉无人驾驶行业，进一步了解相关技术模块，快速上手Apollo及自动驾驶技术。</p>
+<a id="more"></a>
+
 <h1 id="自动驾驶行业概述"><a href="#自动驾驶行业概述" class="headerlink" title="自动驾驶行业概述"></a>自动驾驶行业概述</h1><h2 id="出行领域的趋势"><a href="#出行领域的趋势" class="headerlink" title="出行领域的趋势"></a>出行领域的趋势</h2><h3 id="共享出行-Car-Sharing"><a href="#共享出行-Car-Sharing" class="headerlink" title="共享出行(Car Sharing)"></a>共享出行(Car Sharing)</h3><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%85%B1%E4%BA%AB%E5%87%BA%E8%A1%8C.png" srcset="/img/loading.gif" alt="共享出行数据"></p>
 <ul>
 <li>大部分时间汽车利用率很低(只有1人或无人使用)</li>
@@ -274,7 +276,7 @@
 <li>强大的处理器：无人驾驶车辆搭载的激光雷达(LiDAR)每天产生的数据在TB级别，因此，需要性能强劲的处理器对这些数据进行处理。</li>
 <li>Cluster: 无人驾驶车辆需要实时和云端进行沟通，报告自己的位置，云端需要实时对无人驾驶车辆的位置进行监控跟踪。</li>
 </ol>
-<h2 id="HD-Maps"><a href="#HD-Maps" class="headerlink" title="HD Maps"></a>HD Maps</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/HD_Maps.png" srcset="/img/loading.gif" alt="HD Maps"></p>
+<h2 id="HD-Maps"><a href="#HD-Maps" class="headerlink" title="HD Maps"></a>HD Maps</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/HD_maps.png" srcset="/img/loading.gif" alt="HD Maps"></p>
 <p><strong>为什么无人驾驶需要高精地图？</strong></p>
 <ol>
 <li>使无人驾驶车辆具有预判能力。即使无人驾驶车辆并没有“看到”路面上的减速标志，车辆仍然会提前减速；</li>
@@ -488,8 +490,6 @@
     anchors.options = {
       placement: "right",
       visible: "hover",
-      
-      icon: "§"
       
     };
     var el = "h1,h2,h3,h4,h5,h6".split(",");
