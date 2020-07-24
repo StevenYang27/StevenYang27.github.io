@@ -17,7 +17,7 @@
   <meta name="description" content="Tech Blog of An AI Student">
   <meta name="author" content="Steven Yang">
   <meta name="keywords" content="AI,Autonomous Driving">
-  <title>Apollo智能驾驶公开课系列 进阶课程 第一课：自动驾驶行业概述 - 丛睿的博客</title>
+  <title>Apollo智能驾驶公开课系列 进阶课程 第一课：自动驾驶行业概述（一） - 丛睿的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-20 17:42">
-      2020年7月20日 下午
+    <time datetime="2020-07-19 12:00">
+      2020年7月19日 中午
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      2.5k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21
+      26
        分钟
     </span>
   
@@ -205,7 +205,7 @@
             
             <article class="markdown-body">
               <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><em>本系列文章是百度Apollo智能驾驶系列公开课的学习记录。<a href="https://apollo.auto/" target="_blank" rel="noopener">Apollo</a>是百度发布的面向汽车行业及自动驾驶领域的软件平台。公开课的地址请点击<a href="https://apollo.auto/devcenter/coursetable_cn.html?target=2">这里</a></em>。</p>
-<p>本次课程讲述无人驾驶行业及Apollo平台的核心技术模块，帮助学习者熟悉无人驾驶行业，进一步了解相关技术模块，快速上手Apollo及自动驾驶技术。</p>
+<p>本次课程讲述自动驾驶行业及Apollo平台的核心技术模块，帮助学习者熟悉自动驾驶行业，进一步了解相关技术模块，快速上手Apollo及自动驾驶技术。</p>
 <a id="more"></a>
 
 <h1 id="自动驾驶行业概述"><a href="#自动驾驶行业概述" class="headerlink" title="自动驾驶行业概述"></a>自动驾驶行业概述</h1><h2 id="出行领域的趋势"><a href="#出行领域的趋势" class="headerlink" title="出行领域的趋势"></a>出行领域的趋势</h2><h3 id="共享出行-Car-Sharing"><a href="#共享出行-Car-Sharing" class="headerlink" title="共享出行(Car Sharing)"></a>共享出行(Car Sharing)</h3><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%85%B1%E4%BA%AB%E5%87%BA%E8%A1%8C.png" srcset="/img/loading.gif" alt="共享出行数据"></p>
@@ -238,49 +238,49 @@
 </tr>
 </tbody></table>
 <h3 id="自动驾驶-Autonomous-Driving"><a href="#自动驾驶-Autonomous-Driving" class="headerlink" title="自动驾驶(Autonomous Driving)"></a>自动驾驶(Autonomous Driving)</h3><p><strong>为什么需要自动驾驶？</strong></p>
-<h4 id="93"><a href="#93" class="headerlink" title="93%"></a>93%</h4><p>是人为原因所造成的交通事故比例。相较于人类，无人驾驶具有以下优势：</p>
+<h4 id="93"><a href="#93" class="headerlink" title="93%"></a>93%</h4><p>是人为原因所造成的交通事故比例。相较于人类，自动驾驶具有以下优势：</p>
 <ul>
-<li>处理信息速度快。人类在驾驶车辆时处理信息的速度为30–100条/min，而无人驾驶车辆可以达到3,000条/min</li>
-<li>感知环境角度广。无人驾驶车辆车身遍布传感器，可以同时“看到”前后左右的环境</li>
+<li>处理信息速度快。人类在驾驶车辆时处理信息的速度为30–100条/min，而自动驾驶车辆可以达到3,000条/min</li>
+<li>感知环境角度广。自动驾驶车辆车身遍布传感器，可以同时“看到”前后左右的环境</li>
 </ul>
-<p>因此，无人驾驶在发展成熟的时候，一定比人类驾驶更加安全。</p>
-<h4 id="道路更加顺畅"><a href="#道路更加顺畅" class="headerlink" title="道路更加顺畅"></a>道路更加顺畅</h4><p>无人驾驶可以使道路更加通畅。具体体现在：</p>
+<p>因此，自动驾驶在发展成熟的时候，一定比人类驾驶更加安全。</p>
+<h4 id="道路更加顺畅"><a href="#道路更加顺畅" class="headerlink" title="道路更加顺畅"></a>道路更加顺畅</h4><p>自动驾驶可以使道路更加通畅。具体体现在：</p>
 <ul>
-<li><p>无人驾驶可以减少道路上的交通事故，从而减少道路拥堵</p>
+<li><p>自动驾驶可以减少道路上的交通事故，从而减少道路拥堵</p>
 </li>
-<li><p>无人驾驶的反应时间远小于人类驾驶员。</p>
+<li><p>自动驾驶的反应时间远小于人类驾驶员。</p>
 <div class="note note-info">
-            <p>例如，当人类驾驶员驾驶机动车通过十字路口时，可能需要减速观察路口情况，确认安全后再恢复原速通过；而无人驾驶车辆在经过计算得知<em>（这个过程十分短暂）</em>路口在通过时不可能会变成红灯，也不会有车辆通过时，就会<strong>全速通过路口</strong>。</p>
+            <p>例如，当人类驾驶员驾驶机动车通过十字路口时，可能需要减速观察路口情况，确认安全后再恢复原速通过；而自动驾驶车辆在经过计算得知<em>（这个过程十分短暂）</em>路口在通过时不可能会变成红灯，也不会有车辆通过时，就会<strong>全速通过路口</strong>。</p>
           </div>
 
 </li>
 </ul>
-<h2 id="无人驾驶分级"><a href="#无人驾驶分级" class="headerlink" title="无人驾驶分级"></a>无人驾驶分级</h2><h3 id="Level-1-Adaptive-Cruise-Control"><a href="#Level-1-Adaptive-Cruise-Control" class="headerlink" title="Level 1: Adaptive Cruise Control"></a>Level 1: Adaptive Cruise Control</h3><p>无人驾驶系统可以<strong>纵向</strong>控制车辆，根据周围情况作出加速、减速等行为</p>
-<h3 id="Level-2-Lane-Keeping"><a href="#Level-2-Lane-Keeping" class="headerlink" title="Level 2: Lane Keeping"></a>Level 2: Lane Keeping</h3><p>无人驾驶系统还可以<strong>横向</strong>操控车辆，控制车辆沿车道线（可能是弯曲的车道线）行驶。此时，<strong>人类</strong>还是驾驶行为的主体</p>
+<h2 id="自动驾驶分级"><a href="#自动驾驶分级" class="headerlink" title="自动驾驶分级"></a>自动驾驶分级</h2><h3 id="Level-1-Adaptive-Cruise-Control"><a href="#Level-1-Adaptive-Cruise-Control" class="headerlink" title="Level 1: Adaptive Cruise Control"></a>Level 1: Adaptive Cruise Control</h3><p>自动驾驶系统可以<strong>纵向</strong>控制车辆，根据周围情况作出加速、减速等行为</p>
+<h3 id="Level-2-Lane-Keeping"><a href="#Level-2-Lane-Keeping" class="headerlink" title="Level 2: Lane Keeping"></a>Level 2: Lane Keeping</h3><p>自动驾驶系统还可以<strong>横向</strong>操控车辆，控制车辆沿车道线（可能是弯曲的车道线）行驶。此时，<strong>人类</strong>还是驾驶行为的主体</p>
 <p>e.g. Autopilot from Tesla</p>
-<h3 id="Level-3-Lane-Change"><a href="#Level-3-Lane-Change" class="headerlink" title="Level 3: Lane Change"></a>Level 3: Lane Change</h3><p><strong>无人驾驶驾驶系统</strong>在<strong>特定情况下</strong>成为驾驶行为的主体</p>
+<h3 id="Level-3-Lane-Change"><a href="#Level-3-Lane-Change" class="headerlink" title="Level 3: Lane Change"></a>Level 3: Lane Change</h3><p><strong>自动驾驶驾驶系统</strong>在<strong>特定情况下</strong>成为驾驶行为的主体</p>
 <p>e.g. 2018 Aodi A3</p>
 <div class="note note-warning">
-            <p>Level 2 与 Level 3  之间最重要的区别在于<strong>权责</strong>的鉴定。在Level 2阶段，人类是驾驶行为的主体。例如，Tesla在其Autopilot功能的介绍页面中就如下<a href="https://www.tesla.com/autopilot" target="_blank" rel="noopener">提醒用户</a>：</p><blockquote><p>Current Autopilot features require active driver supervision and do not make the vehicle autonomous.</p><p>当前的Autopilot功能需要驾驶员时刻进行监管，请勿使车辆处于无人驾驶状态。</p></blockquote>
+            <p>Level 2 与 Level 3  之间最重要的区别在于<strong>权责</strong>的鉴定。在Level 2阶段，人类是驾驶行为的主体。例如，Tesla在其Autopilot功能的介绍页面中就如下<a href="https://www.tesla.com/autopilot" target="_blank" rel="noopener">提醒用户</a>：</p><blockquote><p>Current Autopilot features require active driver supervision and do not make the vehicle autonomous.</p><p>当前的Autopilot功能需要驾驶员时刻进行监管，请勿使车辆处于自动驾驶状态。</p></blockquote>
           </div>
 
-<h3 id="Level-4-amp-5-Driverless"><a href="#Level-4-amp-5-Driverless" class="headerlink" title="Level 4 &amp; 5: Driverless"></a>Level 4 &amp; 5: Driverless</h3><p><strong>无人驾驶系统</strong>在<strong>绝大多数情况下</strong>作为驾驶行为的主体。其中，在 Level 5 阶段，车辆内部将不存在方向盘、油门踏板、刹车踏板等操作装置，人类将完全不介入驾驶行为</p>
-<h2 id="无人驾驶发展简史"><a href="#无人驾驶发展简史" class="headerlink" title="无人驾驶发展简史"></a>无人驾驶发展简史</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2.png" srcset="/img/loading.gif" alt="无人驾驶发展简史"></p>
-<h2 id="无人驾驶领域的几次较大投资"><a href="#无人驾驶领域的几次较大投资" class="headerlink" title="无人驾驶领域的几次较大投资"></a>无人驾驶领域的几次较大投资</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%A4%A7%E6%8A%95%E8%B5%84.png" srcset="/img/loading.gif" alt="无人驾驶领域的几次较大投资"></p>
+<h3 id="Level-4-amp-5-Driverless"><a href="#Level-4-amp-5-Driverless" class="headerlink" title="Level 4 &amp; 5: Driverless"></a>Level 4 &amp; 5: Driverless</h3><p><strong>自动驾驶系统</strong>在<strong>绝大多数情况下</strong>作为驾驶行为的主体。其中，在 Level 5 阶段，车辆内部将不存在方向盘、油门踏板、刹车踏板等操作装置，人类将完全不介入驾驶行为</p>
+<h2 id="自动驾驶发展简史"><a href="#自动驾驶发展简史" class="headerlink" title="自动驾驶发展简史"></a>自动驾驶发展简史</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2.png" srcset="/img/loading.gif" alt="自动驾驶发展简史"></p>
+<h2 id="自动驾驶领域的几次较大投资"><a href="#自动驾驶领域的几次较大投资" class="headerlink" title="自动驾驶领域的几次较大投资"></a>自动驾驶领域的几次较大投资</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/%E5%A4%A7%E6%8A%95%E8%B5%84.png" srcset="/img/loading.gif" alt="自动驾驶领域的几次较大投资"></p>
 <p><em>有钱途</em></p>
 <h1 id="Apollo开源模块讲解"><a href="#Apollo开源模块讲解" class="headerlink" title="Apollo开源模块讲解"></a>Apollo开源模块讲解</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>民用技术领域技术最复杂，技术含量最高的行业之一</p>
 <p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/overview.png" srcset="/img/loading.gif" alt="Technical Overview"></p>
 <ol>
-<li>By-wire System: 无人驾驶汽车采用“线控”的方式控制车辆，车内的计算机通过电机驱动车轮。</li>
-<li>强大的处理器：无人驾驶车辆搭载的激光雷达(LiDAR)每天产生的数据在TB级别，因此，需要性能强劲的处理器对这些数据进行处理。</li>
-<li>Cluster: 无人驾驶车辆需要实时和云端进行沟通，报告自己的位置，云端需要实时对无人驾驶车辆的位置进行监控跟踪。</li>
+<li>By-wire System: 自动驾驶汽车采用“线控”的方式控制车辆，车内的计算机通过电机驱动车轮。</li>
+<li>强大的处理器：自动驾驶车辆搭载的激光雷达(LiDAR)每天产生的数据在TB级别，因此，需要性能强劲的处理器对这些数据进行处理。</li>
+<li>Cluster: 自动驾驶车辆需要实时和云端进行沟通，报告自己的位置，云端需要实时对自动驾驶车辆的位置进行监控跟踪。</li>
 </ol>
 <h2 id="HD-Maps"><a href="#HD-Maps" class="headerlink" title="HD Maps"></a>HD Maps</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/HD_maps.png" srcset="/img/loading.gif" alt="HD Maps"></p>
-<p><strong>为什么无人驾驶需要高精地图？</strong></p>
+<p><strong>为什么自动驾驶需要高精地图？</strong></p>
 <ol>
-<li>使无人驾驶车辆具有预判能力。即使无人驾驶车辆并没有“看到”路面上的减速标志，车辆仍然会提前减速；</li>
-<li>减少无人驾驶车辆的计算量。无人驾驶车辆知道特定地标（如红绿灯）的精确坐标后，就不需要在摄像头的整个视野内检索，只需关注ROI中的内容。</li>
-<li>Road Map 和 Intensive Map。Road Map 标注出了车道与车道之间的连接关系，Intensive Map 则主要关注道路周围的静态障碍物。当 Intensive Map 建立好后，无人驾驶车辆在路面上行驶的时候就会忽略这些障碍物。</li>
+<li>使自动驾驶车辆具有预判能力。即使自动驾驶车辆并没有“看到”路面上的减速标志，车辆仍然会提前减速；</li>
+<li>减少自动驾驶车辆的计算量。自动驾驶车辆知道特定地标（如红绿灯）的精确坐标后，就不需要在摄像头的整个视野内检索，只需关注ROI中的内容。</li>
+<li>Road Map 和 Intensive Map。Road Map 标注出了车道与车道之间的连接关系，Intensive Map 则主要关注道路周围的静态障碍物。当 Intensive Map 建立好后，自动驾驶车辆在路面上行驶的时候就会忽略这些障碍物。</li>
 </ol>
 <h2 id="Localization"><a href="#Localization" class="headerlink" title="Localization"></a>Localization</h2><p>有了高精度地图后，最重要的一步就是知道车辆在高精度地图上的什么位置，亦即<strong>定位(Localization)</strong>。</p>
 <p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/localization.png" srcset="/img/loading.gif" alt="Localization"></p>
@@ -294,16 +294,56 @@
 <h4 id="缺陷-1"><a href="#缺陷-1" class="headerlink" title="缺陷"></a>缺陷</h4><p>RTK基站所能覆盖的有效范围有限，一般来说只能保证半径为10miles(≈16km)内有效。对于长距离道路（如国道）来说，完全采用GPS+RTK的定位方案需要建立许多基站，不具备可行性。</p>
 <h3 id="IMU-Inertia-Measurement-Unit"><a href="#IMU-Inertia-Measurement-Unit" class="headerlink" title="IMU(Inertia Measurement Unit)"></a>IMU(Inertia Measurement Unit)</h3><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p>通过测量车辆的朝向、速度、加速度等运动学物理量，加上初始条件下通过某种定位系统（通常是GPS）给出的位置信息，就可以计算出车辆在给定时刻的位置。这样就解决了GPS测量车辆位置时呈现的“瞬移”问题。</p>
 <h4 id="缺陷-2"><a href="#缺陷-2" class="headerlink" title="缺陷"></a>缺陷</h4><p>由于IMU是通过计算得知车辆的位置，故计算过程中得到的误差会产生累计。因此，经常将GPS和IMU结合作为定位方案。GPS和IMU在实际定位过程中相互校准，减少误差。</p>
-<p>然而，当车辆行驶至城市谷地、长距离隧道时，车辆将无法接收到GPS信号。因此，GPS+IMU的方案也不能满足无人驾驶的需要。</p>
+<p>然而，当车辆行驶至城市谷地、长距离隧道时，车辆将无法接收到GPS信号。因此，GPS+IMU的方案也不能满足自动驾驶的需要。</p>
 <h3 id="几何定位-Geometry-Localization"><a href="#几何定位-Geometry-Localization" class="headerlink" title="几何定位(Geometry Localization)"></a>几何定位(Geometry Localization)</h3><h4 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h4><p>几何定位也称作相对定位，通过测量与已知精确位置的特征的距离来计算车辆的位置。GPS也是相对定位的一种（通过测量与卫星之间的距离）。实际应用中，通常选择使用LiDAR测量距离，可以达到很高的定位精度。</p>
-<h2 id="有关LiDAR"><a href="#有关LiDAR" class="headerlink" title="有关LiDAR"></a>有关LiDAR</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/lidar_vision.png" srcset="/img/loading.gif" alt="How does the world look like in the eyes of an autonomous vehicle"></p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>测量精度高</li>
-<li>可以测量深度（距离信息）</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>对环境要求高。由于 LiDAR 采用纳米级波长的激光束，因此很容易被雾霾中的分子</li>
-</ul>
+<h2 id="有关传感器"><a href="#有关传感器" class="headerlink" title="有关传感器"></a>有关传感器</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/lidar_vision.png" srcset="/img/loading.gif" alt="How does the world look like in the eyes of an autonomous vehicle"></p>
+<table>
+<thead>
+<tr>
+<th align="center">传感器</th>
+<th align="center">距离？</th>
+<th align="center">对环境要求？</th>
+<th align="center">颜色？</th>
+<th align="center">速度？</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>LiDAR</strong>💡</td>
+<td align="center">✅（十分精准）</td>
+<td align="center">❌（激光束波长极短）</td>
+<td align="center">❌</td>
+<td align="center">⭕️</td>
+</tr>
+<tr>
+<td align="center"><strong>RADAR</strong>🧲</td>
+<td align="center">✅</td>
+<td align="center">✅（全天候）</td>
+<td align="center">❌</td>
+<td align="center">✅（十分准确）</td>
+</tr>
+<tr>
+<td align="center"><strong>Camera</strong>📹</td>
+<td align="center">❌（双目摄像头可以做到在50～60m范围内误差为1～2m）</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+</tr>
+</tbody></table>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/lidars.png" srcset="/img/loading.gif" alt="Different kinds of LiDAR and their prices"></p>
+<p><em>真的很贵</em></p>
+<h2 id="Sensing-amp-Perception"><a href="#Sensing-amp-Perception" class="headerlink" title="Sensing &amp; Perception"></a>Sensing &amp; Perception</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/sensing_and_perception.png" srcset="/img/loading.gif" alt="Sensing and Perception"></p>
+<p>之前提到，所有的 Sensor 都有自己的局限性，因此实际应用时要将所有的 Sensor 探测到的数据结合起来，这一过程称作<strong>传感器融合(Sensor Fusion)</strong>。</p>
+<p>例如，当自动驾驶车辆遇到行人时，车辆需要将摄像头拍摄的画面、LiDAR 探测到的点云和 RADAR 接收到的信息进行综合，推断出传感器们得到的信息其实是一个物体。做到这一点需要时间和空间上的精确同步，这也是目前的一个<u>技术难点</u>。</p>
+<p>当进行传感器融合之后，车辆需要对探测到的物体进行识别，并且根据识别到的信息，结合过去和当前该物体的运动状态，判断并预测该物体将来的运动状态。</p>
+<h2 id="Trajectory-Planning"><a href="#Trajectory-Planning" class="headerlink" title="Trajectory Planning"></a>Trajectory Planning</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/trajectory_planning.png" srcset="/img/loading.gif" alt="Trajectory Planning"></p>
+<p>自动驾驶系统的最终一环是对车辆做出控制，自动驾驶系统在作出控制时，需要受到以下限制：</p>
+<ol>
+<li>自动驾驶系统作出的控制需要满足一定的约束条件。例如，车辆需要对行人、来车进行避让，在可行条件下超车，遵守交通规则等；</li>
+<li>自动驾驶系统作出的控制需要做到尽可能平滑。目前，大部分车厂的标准是做到使距离对时间的五阶导数$d^5x\over dt^5$尽可能小，目的就是将乘客感受到的不平滑感降到最低。</li>
+</ol>
+<h2 id="to-Avoid-Obstacles"><a href="#to-Avoid-Obstacles" class="headerlink" title="to Avoid Obstacles"></a>to Avoid Obstacles</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/to_avoid_obstacles.png" srcset="/img/loading.gif" alt="to Avoid Obstacles"></p>
+<h2 id="Simulation"><a href="#Simulation" class="headerlink" title="Simulation"></a>Simulation</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/simulation.png" srcset="/img/loading.gif" alt="Simulation"></p>
+<p>百度拥有一个巨大的虚拟空间，存放了许多自动驾驶车辆在实际应用中的场景。每当一个新算法被提出，就可以在这个虚拟空间中进行测试。如果算法未通过测试，则不会被部署到实际车辆上。</p>
 
             </article>
             <hr>
@@ -316,7 +356,7 @@
                     
                       <a class="hover-with-bg" href="/tags/Apollo/">Apollo</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">无人驾驶</a>
+                      <a class="hover-with-bg" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/">自动驾驶</a>
                     
                       <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                     
@@ -495,7 +535,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Apollo智能驾驶公开课系列 进阶课程 第一课：自动驾驶行业概述&nbsp;",
+        "Apollo智能驾驶公开课系列 进阶课程 第一课：自动驾驶行业概述（一）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
