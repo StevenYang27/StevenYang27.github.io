@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-08-17 16:29">
-      2020年8月17日 下午
+    <time datetime="2020-08-12 12:00">
+      2020年8月12日 中午
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      843 字
+      1k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      10
        分钟
     </span>
   
@@ -245,15 +245,23 @@
 <p>工控机同时配套GTX1080系列显卡，多路USB接口（支持多个摄像头📹接入），多路PCI-E接口（支持PCI-E接口的CAN卡，实现与车辆底层的CAN通讯）。</p>
 <h2 id="定位系统"><a href="#定位系统" class="headerlink" title="定位系统"></a>定位系统</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA.png" srcset="/img/loading.gif" alt="Satellite Localization"></p>
 <p>无人驾驶车辆主要通过卫星定位来确定车辆位置，其中，IMU的工作过程如下图所示。</p>
-<p>graph TD</p>
-<p>  A(车辆🚗当前的加速度、航向角等信息)</p>
-<p>  A <strong>–&gt;</strong> B(计算求解得到当前车辆的姿态信息)</p>
-<p>  B <strong>–&gt;</strong> C(进行定位补偿运算)</p>
-<p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
+<hr>
+<p>graph TD<br>  A(车辆🚗当前的加速度、航向角等信息)<br>  A –&gt; B(计算求解得到当前车辆的姿态信息)</p>
+<h2 id="B-–-gt-C-进行定位补偿运算"><a href="#B-–-gt-C-进行定位补偿运算" class="headerlink" title="  B –&gt; C(进行定位补偿运算)"></a>  B –&gt; C(进行定位补偿运算)</h2><p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
 <h2 id="CAN卡"><a href="#CAN卡" class="headerlink" title="CAN卡"></a>CAN卡</h2><p>开发套件选用<strong>EMUC-CAN卡</strong>，通过工控机的miniPCIe的接口与工控机相联，实现工控机与车辆底层的通讯。</p>
 <p>在软件方面，该CAN卡通过Linux内核自带的socket套接字通讯方式实现内核的驱动，从而实现车辆与Apollo软件的双向通信，如下图所示。</p>
 <p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/CAN%E5%8D%A1.png" srcset="/img/loading.gif" alt="CAN卡"></p>
-<h1 id="Apollo开发套件硬件连接"><a href="#Apollo开发套件硬件连接" class="headerlink" title="Apollo开发套件硬件连接"></a>Apollo开发套件硬件连接</h1>
+<h1 id="Apollo开发套件硬件连接"><a href="#Apollo开发套件硬件连接" class="headerlink" title="Apollo开发套件硬件连接"></a>Apollo开发套件硬件连接</h1><p>硬件连接需要注意两点：<strong>电源连接</strong>和<strong>各硬件之间的数据通讯方式</strong>。</p>
+<h2 id="电源连接"><a href="#电源连接" class="headerlink" title="电源连接"></a>电源连接</h2><p> Apollo开发套件循迹硬件电源接线图如下图所示。</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E7%94%B5%E6%BA%90%E8%BF%9E%E7%BA%BF.png" srcset="/img/loading.gif" alt="电源连线"> </p>
+<p>注意硬件中除<strong>工控机需要提供24V直流电源</strong>外，其他需要直接通过车辆供电的硬件所需电压均为<strong>12V</strong>。</p>
+<h2 id="数据接口"><a href="#数据接口" class="headerlink" title="数据接口"></a>数据接口</h2><p>Apollo开发套件循迹硬件之间的数据接口连线如下图所示。</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E8%BF%9E%E7%BA%BF.png" srcset="/img/loading.gif" alt="数据接口连线"></p>
+ <div class="note note-primary">
+            <p>良好的接线习惯：</p><ol><li>接线前要确定额定电压</li><li>接线时要确保正负极接对</li><li>连接完毕后请仔细检查</li><li>检查无误后再上电测试</li></ol>
+          </div>
+
+
             </article>
             <hr>
             <div>
