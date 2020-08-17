@@ -245,9 +245,8 @@
 <p>工控机同时配套GTX1080系列显卡，多路USB接口（支持多个摄像头📹接入），多路PCI-E接口（支持PCI-E接口的CAN卡，实现与车辆底层的CAN通讯）。</p>
 <h2 id="定位系统"><a href="#定位系统" class="headerlink" title="定位系统"></a>定位系统</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA.png" srcset="/img/loading.gif" alt="Satellite Localization"></p>
 <p>无人驾驶车辆主要通过卫星定位来确定车辆位置，其中，IMU的工作过程如下图所示。</p>
-<hr>
-<p>graph TD<br>  A(车辆🚗当前的加速度、航向角等信息)<br>  A –&gt; B(计算求解得到当前车辆的姿态信息)</p>
-<h2 id="B-–-gt-C-进行定位补偿运算"><a href="#B-–-gt-C-进行定位补偿运算" class="headerlink" title="  B –&gt; C(进行定位补偿运算)"></a>  B –&gt; C(进行定位补偿运算)</h2><p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
+<p>graph TD<br>  A(车辆🚗当前的加速度、航向角等信息)<br>  A –&gt; B(计算求解得到当前车辆的姿态信息)<br>  B –&gt; C(进行定位补偿运算)</p>
+<p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
 <h2 id="CAN卡"><a href="#CAN卡" class="headerlink" title="CAN卡"></a>CAN卡</h2><p>开发套件选用<strong>EMUC-CAN卡</strong>，通过工控机的miniPCIe的接口与工控机相联，实现工控机与车辆底层的通讯。</p>
 <p>在软件方面，该CAN卡通过Linux内核自带的socket套接字通讯方式实现内核的驱动，从而实现车辆与Apollo软件的双向通信，如下图所示。</p>
 <p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/CAN%E5%8D%A1.png" srcset="/img/loading.gif" alt="CAN卡"></p>
