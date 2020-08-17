@@ -17,7 +17,7 @@
   <meta name="description" content="Tech Blog of An AI Student">
   <meta name="author" content="Steven Yang">
   <meta name="keywords" content="AI,Autonomous Driving">
-  <title>Apollo智能驾驶课程系列 入门课程 第一课：无人驾驶概览 - 丛睿的博客</title>
+  <title>Apollo智能驾驶公开课系列 实践课程 第一课：Apollo硬件连接集成--硬件介绍 - 丛睿的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-17 17:53">
-      2020年7月17日 下午
+    <time datetime="2020-08-17 16:29">
+      2020年8月17日 下午
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      167 字
+      843 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      9
        分钟
     </span>
   
@@ -204,19 +204,56 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><em>本系列文章是百度Apollo智能驾驶系列公开课的学习记录。<a href="https://apollo.auto/" target="_blank" rel="noopener">Apollo</a>是百度发布的面向汽车行业及自动驾驶领域的软件平台。公开课的地址请点击<a href="https://apollo.auto/devcenter/coursetable_cn.html?target=1">这里</a>。</em></p>
-<h1 id="你将会学到什么？"><a href="#你将会学到什么？" class="headerlink" title="你将会学到什么？"></a>你将会学到什么？</h1><ul>
-<li><p>高精度地图(High Defination Maps)：无人驾驶车的<strong>核心部件</strong>，几乎支持软件栈的所有其他模块（包括定位、感知、预测和规划）。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%85%A5%E9%97%A8%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/HD_Maps.jpeg" srcset="/img/loading.gif" alt="HD Maps"></p>
-</li>
-<li><p>定位（Localization)：汽车通过将雷达/激光数据与高分辨率地图进行对比，确定汽车在环境中所处的位置。这种定位方式能够达到<u>cm级</u>精度。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%85%A5%E9%97%A8%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/Localization.jpeg" srcset="/img/loading.gif" alt="Localization"></p>
-</li>
-<li><p>感知(Perception)：</p>
-</li>
-</ul>
-<p>1. </p>
+              <p><em>本系列文章是百度Apollo智能驾驶系列公开课的学习记录。<a href="https://apollo.auto/" target="_blank" rel="noopener">Apollo</a>是百度发布的面向汽车行业及自动驾驶领域的软件平台。实践系列课程需要在<a href="http://www.auto-mooc.com/" target="_blank" rel="noopener">汽车学堂</a>慕课平台自行注册并搜索<strong>Apollo自动驾驶实践—从Apollo开发套件循迹开始</strong>购买。</em></p>
+<a id="more"></a>
 
+<h3 id="章节导读"><a href="#章节导读" class="headerlink" title="章节导读"></a>章节导读</h3><p>本节课学习者将深入了解Apollo在循迹时的车辆准备，必要的硬件准备以及硬件的集成原理，为实现自动驾驶循迹能力做好硬件准备。</p>
+<h1 id="Apollo推荐硬件平台及车辆认证平台"><a href="#Apollo推荐硬件平台及车辆认证平台" class="headerlink" title="Apollo推荐硬件平台及车辆认证平台"></a>Apollo推荐硬件平台及车辆认证平台</h1><p>Apollo不仅为开发者提供了开源的软件平台，也为开发者提供了推荐的<a href="https://apollo.auto/platform/hardware_cn.html" target="_blank" rel="noopener">硬件💾</a>以及<a href="https://apollo.auto/vehicle/certificate_cn.html" target="_blank" rel="noopener">车辆🚗</a>选型。开发者可点击链接查看。</p>
+<h1 id="Apollo开发套件硬件组成及原理"><a href="#Apollo开发套件硬件组成及原理" class="headerlink" title="Apollo开发套件硬件组成及原理"></a>Apollo开发套件硬件组成及原理</h1><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/Apollo%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6.png" srcset="/img/loading.gif" alt="Apollo开发套件"></p>
+<p>Apollo开发套件包括以下部分：</p>
+<ol>
+<li><strong>车辆底盘</strong></li>
+<li><strong>计算单元</strong>：推荐使用工控机</li>
+<li><strong>感知系统</strong>：前置摄像头、前置毫米波雷达、激光雷达</li>
+<li><strong>定位系统</strong>：前后GPS天线、GPS接收机、惯性测量单元IMU</li>
+<li><strong>其他配件</strong>：CAN卡、4G路由器、显示器、键盘鼠标</li>
+</ol>
+<div class="note note-primary">
+            <p>由于车辆在循迹自动驾驶过程中不涉及避障操作，因此搭建硬件平台时不需要摄像头、毫米波雷达、激光雷达等感知硬件</p>
+          </div>
+
+<h2 id="计算单元"><a href="#计算单元" class="headerlink" title="计算单元"></a>计算单元</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>实时传感器数据采集</li>
+<li>计算处理</li>
+<li>感知规划</li>
+<li>决策控制</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>算力强大</li>
+<li>全天候稳定运行</li>
+</ul>
+<div class="note note-info">
+            <p><strong>工控机</strong>是工业控制计算器的简称，是一种采用总线结构，对生产过程、机电设备及工艺装置进行检测与控制的工具。工控机的主要类别有：</p><ul><li><strong>IPC(Industrial PC, PC总线工业电脑)</strong></li><li>PLC(Programmable Logic Controller, 可编程控制系统)</li><li>DCS(Discrete Control System, 分散型控制系统)</li><li>FCS(Fieldbus Control System, 现场总线系统)</li><li>CNC(Computer Numerical Control, 数控系统)</li></ul>
+          </div>
+
+<p>Apollo开发套件选用<strong>晨曜6108系列</strong>工控机，其工作温度为：</p>
+<ul>
+<li><strong>-40℃～+80℃</strong>稳定存储数据</li>
+<li><strong>-20℃～+60℃</strong>满载稳定工作</li>
+</ul>
+<p>具有抗振动、抗冲击、抗电磁干扰的特点，确保工控机在车辆环境下稳定可靠地运行。</p>
+<p>工控机同时配套GTX1080系列显卡，多路USB接口（支持多个摄像头📹接入），多路PCI-E接口（支持PCI-E接口的CAN卡，实现与车辆底层的CAN通讯）。</p>
+<h2 id="定位系统"><a href="#定位系统" class="headerlink" title="定位系统"></a>定位系统</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA.png" srcset="/img/loading.gif" alt="Satellite Localization"></p>
+<p>无人驾驶车辆主要通过卫星定位来确定车辆位置，其中，IMU的工作过程如下图所示。</p>
+<p>graph TD</p>
+<p>  A(车辆🚗当前的加速度、航向角等信息)</p>
+<p>  A <strong>–&gt;</strong> B(计算求解得到当前车辆的姿态信息)</p>
+<p>  B <strong>–&gt;</strong> C(进行定位补偿运算)</p>
+<p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
+<h2 id="CAN卡"><a href="#CAN卡" class="headerlink" title="CAN卡"></a>CAN卡</h2><p>开发套件选用<strong>EMUC-CAN卡</strong>，通过工控机的miniPCIe的接口与工控机相联，实现工控机与车辆底层的通讯。</p>
+<p>在软件方面，该CAN卡通过Linux内核自带的socket套接字通讯方式实现内核的驱动，从而实现车辆与Apollo软件的双向通信，如下图所示。</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/CAN%E5%8D%A1.png" srcset="/img/loading.gif" alt="CAN卡"></p>
+<h1 id="Apollo开发套件硬件连接"><a href="#Apollo开发套件硬件连接" class="headerlink" title="Apollo开发套件硬件连接"></a>Apollo开发套件硬件连接</h1>
             </article>
             <hr>
             <div>
@@ -228,7 +265,9 @@
                     
                       <a class="hover-with-bg" href="/tags/Apollo/">Apollo</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">无人驾驶</a>
+                      <a class="hover-with-bg" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/">自动驾驶</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                     
                   </div>
                 
@@ -236,6 +275,23 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/12/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/">
+                        <span class="hidden-mobile">Apollo智能驾驶公开课系列 实践课程 第零课：导论</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
               
             </div>
 
@@ -401,7 +457,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Apollo智能驾驶课程系列 入门课程 第一课：无人驾驶概览&nbsp;",
+        "Apollo智能驾驶公开课系列 实践课程 第一课：Apollo硬件连接集成--硬件介绍&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -471,6 +527,13 @@
 
 
 
+
+  <script  src="https://cdn.staticfile.org/mermaid/8.5.0/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
