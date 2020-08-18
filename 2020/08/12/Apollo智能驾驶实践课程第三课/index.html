@@ -17,7 +17,7 @@
   <meta name="description" content="Tech Blog of An AI Student">
   <meta name="author" content="Steven Yang">
   <meta name="keywords" content="AI,Autonomous Driving">
-  <title>Apollo智能驾驶公开课系列 实践课程 第一课：Apollo硬件连接集成--硬件介绍 - 丛睿的博客</title>
+  <title>Apollo智能驾驶公开课系列 实践课程 第二课：Apollo硬件连接集成--集成实操 - 丛睿的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-08-12 12:00">
-      2020年8月12日 中午
+    <time datetime="2020-08-12 15:00">
+      2020年8月12日 下午
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      963 字
+      1.4k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      14
        分钟
     </span>
   
@@ -207,60 +207,82 @@
               <p><em>本系列文章是百度Apollo智能驾驶系列公开课的学习记录。<a href="https://apollo.auto/" target="_blank" rel="noopener">Apollo</a>是百度发布的面向汽车行业及自动驾驶领域的软件平台。实践系列课程需要在<a href="http://www.auto-mooc.com/" target="_blank" rel="noopener">汽车学堂</a>慕课平台自行注册并搜索<strong>Apollo自动驾驶实践—从Apollo开发套件循迹开始</strong>购买。</em></p>
 <a id="more"></a>
 
-<h3 id="章节导读"><a href="#章节导读" class="headerlink" title="章节导读"></a>章节导读</h3><p>本节课学习者将深入了解Apollo在循迹时的车辆准备，必要的硬件准备以及硬件的集成原理，为实现自动驾驶循迹能力做好硬件准备。</p>
-<h1 id="Apollo推荐硬件平台及车辆认证平台"><a href="#Apollo推荐硬件平台及车辆认证平台" class="headerlink" title="Apollo推荐硬件平台及车辆认证平台"></a>Apollo推荐硬件平台及车辆认证平台</h1><p>Apollo不仅为开发者提供了开源的软件平台，也为开发者提供了推荐的<a href="https://apollo.auto/platform/hardware_cn.html" target="_blank" rel="noopener">硬件💾</a>以及<a href="https://apollo.auto/vehicle/certificate_cn.html" target="_blank" rel="noopener">车辆🚗</a>选型。开发者可点击链接查看。</p>
-<h1 id="Apollo开发套件硬件组成及原理"><a href="#Apollo开发套件硬件组成及原理" class="headerlink" title="Apollo开发套件硬件组成及原理"></a>Apollo开发套件硬件组成及原理</h1><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/Apollo%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6.png" srcset="/img/loading.gif" alt="Apollo开发套件"></p>
-<p>Apollo开发套件包括以下部分：</p>
-<ol>
-<li><strong>车辆底盘</strong></li>
-<li><strong>计算单元</strong>：推荐使用工控机</li>
-<li><strong>感知系统</strong>：前置摄像头、前置毫米波雷达、激光雷达</li>
-<li><strong>定位系统</strong>：前后GPS天线、GPS接收机、惯性测量单元IMU</li>
-<li><strong>其他配件</strong>：CAN卡、4G路由器、显示器、键盘鼠标</li>
+<h3 id="章节导读"><a href="#章节导读" class="headerlink" title="章节导读"></a>章节导读</h3><p>本节课学习者将对Apollo开发套件的硬件安装方法以及车辆集成实际操作进行深入学习，为实现自动驾驶循迹做好准备。</p>
+<h1 id="CAN卡的安装要求"><a href="#CAN卡的安装要求" class="headerlink" title="CAN卡的安装要求"></a>CAN卡的安装要求</h1><h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><ol>
+<li><p>将黑色跳帽安装在CAN卡内，确保两路CAN通讯同时工作</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%89%E8%AF%BE/%E8%B7%B3%E5%B8%BD.png" srcset="/img/loading.gif" alt="安装跳帽"></p>
+</li>
+<li><p>将PCB板上做好标记，注意PCB板上标注的<code>CN1</code>和<code>CN2</code>分别对应软件中的<code>CAN0</code>和<code>CAN1</code>，因此需要在PCB板上做好标记以免之后接错</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%89%E8%AF%BE/%E6%A0%87%E8%AE%B0.png" srcset="/img/loading.gif" alt="做好标记"></p>
+</li>
+</ol>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><ol>
+<li>拆解工控机外壳，将CNA卡使用M2.5的螺栓固定在工控机内部相应位置</li>
+<li>将CAN卡接线，CN1接CAN0，CN2接CAN1</li>
+<li>使用螺栓固定CAN卡接口</li>
+<li>将工控机外壳装回工控机上</li>
+</ol>
+<h1 id="工控机的安装要求"><a href="#工控机的安装要求" class="headerlink" title="工控机的安装要求"></a>工控机的安装要求</h1><h2 id="安装前准备-1"><a href="#安装前准备-1" class="headerlink" title="安装前准备"></a>安装前准备</h2><p>将工控机自带支架使用随配附件安装在工控机底部</p>
+<h2 id="安装过程-1"><a href="#安装过程-1" class="headerlink" title="安装过程"></a>安装过程</h2><ol>
+<li><p>将工控机固定在Apollo开发套件预留的工控机安装孔上，如下图所示</p>
+<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%89%E8%AF%BE/%E5%AE%89%E8%A3%85%E5%AD%94.png" srcset="/img/loading.gif" alt="安装孔位置"></p>
+<p>注意在安装时，工控机带接口的一面须面向车辆后方</p>
+</li>
+<li><p>为工控机安装电源🔌。将电源线绿色的接插件(24V)使用螺丝固定安装在工控机的电源输入端，注意正负极不要接反</p>
+</li>
+</ol>
+<h1 id="导航设备的安装要求"><a href="#导航设备的安装要求" class="headerlink" title="导航设备的安装要求"></a>导航设备的安装要求</h1><h2 id="安装GPS天线"><a href="#安装GPS天线" class="headerlink" title="安装GPS天线"></a>安装GPS天线</h2><ol>
+<li>连接GPS天线和底座。将GPS天线通过底座上的螺纹与底座连接，尽量拧紧一些，以免天线在车辆运行时松掉影响定位精度</li>
+<li>固定GPS天线。GPS天线底座有磁铁🧲，可以直接连接在Apollo开发套件车架上。但是为保证连接稳定可靠，可以先<strong>在GPS底座粘贴工业用双面胶</strong>，再固定在车架上</li>
+<li>连接GPS天线线束。</li>
 </ol>
 <div class="note note-primary">
-            <p>由于车辆在循迹自动驾驶过程中不涉及避障操作，因此搭建硬件平台时不需要摄像头、毫米波雷达、激光雷达等感知硬件</p>
+            <p>Apollo开发套件的车架上已经预留好GPS天线的安装位置，安装时尽量将天线安装在<strong>车辆纵向的中心处</strong>，两个天线的连线与车身线平行。</p>
           </div>
 
-<h2 id="计算单元"><a href="#计算单元" class="headerlink" title="计算单元"></a>计算单元</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
-<li>实时传感器数据采集</li>
-<li>计算处理</li>
-<li>感知规划</li>
-<li>决策控制</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>算力强大</li>
-<li>全天候稳定运行</li>
-</ul>
+<h2 id="安装GPS接收机和IMU"><a href="#安装GPS接收机和IMU" class="headerlink" title="安装GPS接收机和IMU"></a>安装GPS接收机和IMU</h2><p>由于星网宇达M2接收机在内部集成了IMU，因此只需安装这一个硬件即可。</p>
+<div class="note note-primary">
+            <p>IMU惯性测量单元一般安装在车辆后轴中心附近，可以减少测量误差，有效表征车辆运动姿态。</p>
+          </div>
+
+<ol start="4">
+<li><p>连接GPS天线与GPS接收机。GPS接收机有两个接口，分别为<code>Primary</code>接口和<code>Secondary</code>接口。定义车辆<strong>后部天线</strong>为<code>Primary</code>天线，<strong>前部天线</strong>为<code>Secondary</code>天线，将天线与对应接口相连</p>
+</li>
+<li><p>连接GPS接收机电源。将星网宇达M2集成线束连接在GPS接收机上，并将M2供电线通过保险盒接入主电源。由于星网宇达M2的正常工作电流为1A，故其电源线应从保险盒5A输出端接入。由于M2自带电源线束长度较短，因此需要连接保险盒提供的电源延长线进行延长。</p>
 <div class="note note-info">
-            <p><strong>工控机</strong>是工业控制计算器的简称，是一种采用总线结构，对生产过程、机电设备及工艺装置进行检测与控制的工具。工控机的主要类别有：</p><ul><li><strong>IPC(Industrial PC, PC总线工业电脑)</strong></li><li>PLC(Programmable Logic Controller, 可编程控制系统)</li><li>DCS(Discrete Control System, 分散型控制系统)</li><li>FCS(Fieldbus Control System, 现场总线系统)</li><li>CNC(Computer Numerical Control, 数控系统)</li></ul>
+            <p>   星网宇达M2集成线束包括以下线缆：</p><ol><li>GPS接收线：用于数据传输</li><li>GPS授时线：用于提供GPS授时<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="GPS授时：GPS授时产品从GPS卫星上获取标准的时间信号，将这些信息传输给自动化系统中需要时间信息的设备。">[1]</span></a></sup>功能</li><li>网线接口：用于提供联网功能</li><li>供电线：用于供电</li><li>升级口：用于配置M2</li></ol>
           </div>
 
-<p>Apollo开发套件选用<strong>晨曜6108系列</strong>工控机，其工作温度为：</p>
-<ul>
-<li><strong>-40℃～+80℃</strong>稳定存储数据</li>
-<li><strong>-20℃～+60℃</strong>满载稳定工作</li>
-</ul>
-<p>具有抗振动、抗冲击、抗电磁干扰的特点，确保工控机在车辆环境下稳定可靠地运行。</p>
-<p>工控机同时配套GTX1080系列显卡，多路USB接口（支持多个摄像头📹接入），多路PCI-E接口（支持PCI-E接口的CAN卡，实现与车辆底层的CAN通讯）。</p>
-<h2 id="定位系统"><a href="#定位系统" class="headerlink" title="定位系统"></a>定位系统</h2><p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA.png" srcset="/img/loading.gif" alt="Satellite Localization"></p>
-<p>无人驾驶车辆主要通过卫星定位来确定车辆位置，其中，IMU的工作过程如下图所示。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/IMU.png" srcset="/img/loading.gif" alt="IMU Workflow"></p>
-<p>Apollo的定位系统由一对GPS天线和一个GPS接收机<strong>星网宇达M2</strong>组成，该接收机集成了IMU，能够提供惯性测量的输出。</p>
-<h2 id="CAN卡"><a href="#CAN卡" class="headerlink" title="CAN卡"></a>CAN卡</h2><p>开发套件选用<strong>EMUC-CAN卡</strong>，通过工控机的miniPCIe的接口与工控机相联，实现工控机与车辆底层的通讯。</p>
-<p>在软件方面，该CAN卡通过Linux内核自带的socket套接字通讯方式实现内核的驱动，从而实现车辆与Apollo软件的双向通信，如下图所示。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/CAN%E5%8D%A1.png" srcset="/img/loading.gif" alt="CAN卡"></p>
-<h1 id="Apollo开发套件硬件连接"><a href="#Apollo开发套件硬件连接" class="headerlink" title="Apollo开发套件硬件连接"></a>Apollo开发套件硬件连接</h1><p>硬件连接需要注意两点：<strong>电源连接</strong>和<strong>各硬件之间的数据通讯方式</strong>。</p>
-<h2 id="电源连接"><a href="#电源连接" class="headerlink" title="电源连接"></a>电源连接</h2><p> Apollo开发套件循迹硬件电源接线图如下图所示。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E7%94%B5%E6%BA%90%E8%BF%9E%E7%BA%BF.png" srcset="/img/loading.gif" alt="电源连线"> </p>
-<p>注意硬件中除<strong>工控机需要提供24V直流电源</strong>外，其他需要直接通过车辆供电的硬件所需电压均为<strong>12V</strong>。</p>
-<h2 id="数据接口"><a href="#数据接口" class="headerlink" title="数据接口"></a>数据接口</h2><p>Apollo开发套件循迹硬件之间的数据接口连线如下图所示。</p>
-<p><img src="/img/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E8%BF%9E%E7%BA%BF.png" srcset="/img/loading.gif" alt="数据接口连线"></p>
- <div class="note note-primary">
-            <p>良好的接线习惯：</p><ol><li>接线前要确定额定电压</li><li>接线时要确保正负极接对</li><li>连接完毕后请仔细检查</li><li>检查无误后再上电测试</li></ol>
+<div class="note note-primary">
+            <p>保险盒连接规则：</p><p>底盘电源连接到保险盒干路上，根据用电器的电流大小，接到相应的输出端口。根据输出电流的大小，保险盒的输出分为5A、10A和15A。</p><p>连接时，电源线正极按照用电器的正常工作电流大小连接到相应的输出端，负极都接至保险盒的汇流排上。</p>
           </div>
 
+</li>
+</ol>
+<h1 id="路由器与显示器的安装要求"><a href="#路由器与显示器的安装要求" class="headerlink" title="路由器与显示器的安装要求"></a>路由器与显示器的安装要求</h1><h2 id="安装4G路由器"><a href="#安装4G路由器" class="headerlink" title="安装4G路由器"></a>安装4G路由器</h2><ol>
+<li><p>固定4G路由器。将4G路由器使用双面胶固定在Apollo开发套件车辆上</p>
+<div class="note note-primary">
+            <p>4G路由器给工控机和M2设备提供网络连接，为方便接线，建议把4G路由器放在工控机和M2附近。</p>
+          </div>
 
+<div class="note note-warning">
+            <p>4G路由器提供的电源线束一端连接的是电源适配器，另一端连接路由器，因此需要将线束连接电源适配器的一端剪断后再与底盘电源保险盒进行连接。</p>
+          </div>
+</li>
+<li><p>连接4G路由器电源。由于4G路由器正常工作电流不超过1A，因此将电源线束连接至保险盒<strong>5A输出</strong>上。</p>
+</li>
+<li><p>整理线束。</p>
+</li>
+</ol>
+<h2 id="安装显示器"><a href="#安装显示器" class="headerlink" title="安装显示器"></a>安装显示器</h2><p>连接显示器电源。由于显示器正常工作时电流在7～8A左右，故将显示器电源连接在保险盒<strong>15A输出</strong>端。</p>
+<h2 id="连接通信接口"><a href="#连接通信接口" class="headerlink" title="连接通信接口"></a>连接通信接口</h2><ol>
+<li>连接4G路由器网线。4G路由器为<strong>工控机</strong>和<strong>GPS接收机</strong>提供网络连接</li>
+<li>连接GPS接收机与工控机。将星网宇达M2的接收线通过<strong>USB接口</strong>连接至工控机上。</li>
+<li>连接显示器与工控机。将显示器与工控机通过工控机上的<strong>HDMI接口</strong>相连。</li>
+<li>连接工控机和车辆底盘。将工控机与底盘通过<strong>CAN口</strong>相连，实现工控机与车辆底盘之间的CAN通讯。</li>
+</ol>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>GPS授时：GPS授时产品从GPS卫星上获取标准的时间信号，将这些信息传输给自动化系统中需要时间信息的设备。
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </article>
             <hr>
             <div>
@@ -287,18 +309,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/12/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%89%E8%AF%BE/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Apollo智能驾驶公开课系列 实践课程 第二课：Apollo硬件连接集成--集成实操</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/08/12/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/">
-                        <span class="hidden-mobile">Apollo智能驾驶公开课系列 实践课程 第零课：导论</span>
+                      <a href="/2020/08/12/Apollo%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%AC%E4%BA%8C%E8%AF%BE/">
+                        <span class="hidden-mobile">Apollo智能驾驶公开课系列 实践课程 第一课：Apollo硬件连接集成--硬件介绍</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -470,7 +486,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Apollo智能驾驶公开课系列 实践课程 第一课：Apollo硬件连接集成--硬件介绍&nbsp;",
+        "Apollo智能驾驶公开课系列 实践课程 第二课：Apollo硬件连接集成--集成实操&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -540,13 +556,6 @@
 
 
 
-
-  <script  src="https://cdn.staticfile.org/mermaid/8.5.0/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"base","themeVariables":{"primaryColor":"#fdf4df"}});
-    }
-  </script>
 
 
 
